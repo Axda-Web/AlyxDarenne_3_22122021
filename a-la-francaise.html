@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,20 +9,35 @@
     <!-- normalize.css -->
     <link rel="stylesheet" href="./Assets/css/normalize.css">
 
+    <!-- FontAwesome -->
+    <script src="https://kit.fontawesome.com/ca497c4259.js" crossorigin="anonymous"></script>
+
     <!-- stylesheet -->
     <link rel="stylesheet" href="./Assets/css/style.css">
     <title>ohmyfood</title>
 </head>
+
 <body>
+
+    <!-- HERO SECTION -->
     <section class="hero">
         <header class="hero__header">
-            <a class="hero__header__return" href="./index.html"><i class="fas fa-arrow-left hero__header__return__icon"></i></a>
+            <a class="hero__header__return" href="./index.html"><i
+                    class="fas fa-arrow-left hero__header__return__icon"></i></a>
             <img src="./Assets/images/logo/ohmyfood.png" alt="ohmyfood brand logo" class="hero__header__logo">
         </header>
-        <img src="./Assets/images/restaurants/toa-heftiba-DQKerTsQwi0-unsplash.jpg" alt="photo plat restaurant a la française" class="hero__img">
+        <img src="./Assets/images/restaurants/toa-heftiba-DQKerTsQwi0-unsplash.jpg"
+            alt="photo plat restaurant a la française" class="hero__img">
     </section>
+    <!-- HERO SECTION END-->
+
+
+    <!-- MENU SECTION -->
     <main class="menu">
-        <h1 class="menu__heading">A la française</h1>
+        <div class="menu__heading-container">
+            <h1 class="menu__heading__text">A la française</h1>
+            <i class="far fa-heart menu__heading__icon"></i>
+        </div>
         <div class="menu__starter">
             <h2 class="menu__starter__title">Entrées</h2>
             <div class="menu__starter__card-container">
@@ -97,17 +113,23 @@
             </div>
         </div>
 
-        <a href="./index.html#restaurant" class="menu__cta cta">Explorez nos restaurants</a>
-        
-    </main>
+        <a href="./index.html#restaurant" class="menu__cta cta">Commander</a>
 
+    </main>
+    <!-- MENU SECTION END -->
+
+    <!-- FOOTER -->
     <footer class="footer">
         <img src="" alt="" class="footer__logo">
-        <a href="" class="footer__text--bold"><i class="fas fa-utensils footer__text__icon"></i> Proposer un restaurant</a>
-        <a href="" class="footer__text--bold"><i class="fas fa-people-arrows footer__text__icon"></i> Devenir partenaire</a>
+        <a href="" class="footer__text--bold"><i class="fas fa-utensils footer__text__icon"></i> Proposer un
+            restaurant</a>
+        <a href="" class="footer__text--bold"><i class="fas fa-people-arrows footer__text__icon"></i> Devenir
+            partenaire</a>
         <a href="" class="footer__text">Mentions légales</a>
         <a href="" class="footer__text">Contact</a>
     </footer>
-    
+    <!-- FOOTER END -->
+
 </body>
+
 </html>
