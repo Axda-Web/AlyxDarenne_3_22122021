@@ -1,5 +1,23 @@
+/* FONT-FAMILY */
+/* FONT-SIZE */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
 body {
-  color: purple;
+  font-size: 16px;
+  font-family: "Roboto", sans-serif;
+}
+
+.cta {
+  display: inline-block;
+  padding: 0.7em 1.2em;
+  background: linear-gradient(to bottom right, #FF79DA, #9356DC);
+  color: #FFF;
+  text-decoration: none;
+  border-radius: 25px;
 }
 
 /*# sourceMappingURL=style.css.map */
