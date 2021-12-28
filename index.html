@@ -13,7 +13,7 @@
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
 
     <!-- normalize.css -->
     <link rel="stylesheet" href="./Assets/css/normalize.css">
@@ -31,7 +31,8 @@
     <!-- HERO SECTION -->
     <section class="hero">
         <header class="hero__header">
-            <img src="./Assets/images/logo/ohmyfood.png" alt="ohmyfood brand logo" class="hero__header__logo">
+            <h1 class="hero__header__logo">ohmyfood</h1>
+            <!-- <img src="./Assets/images/logo/ohmyfood@2x.svg" alt="ohmyfood brand logo" class="hero__header__logo"> -->
         </header>
         <div class="hero__location">
             <h3 class="hero__location__text"><i class="fas fa-map-marker-alt hero__location__text__icon"></i> Paris,
@@ -50,17 +51,17 @@
     <section class="operation">
         <h2 class="operation__heading">Fonctionnement</h2>
         <div class="operation__card-container">
-            <div class="operation__card">
+            <div class="card operation__card">
                 <p class="operation__card__num">1</p>
                 <i class="fas fa-mobile-alt operation__card__icon"></i>
                 <p class="operation__card__text">Choisissez un restaurant</p>
             </div>
-            <div class="operation__card">
+            <div class="card operation__card">
                 <p class="operation__card__num">2</p>
                 <i class="fas fa-list-ul operation__card__icon"></i>
                 <p class="operation__card__text">Composez votre menu</p>
             </div>
-            <div class="operation__card operation__card--active">
+            <div class="card operation__card operation__card--active">
                 <p class="operation__card__num">3</p>
                 <i class="fas fa-store operation__card__icon"></i>
                 <p class="operation__card__text">Dégustez au restaurant</p>
@@ -74,7 +75,7 @@
     <main id="restaurant" class="restaurant">
         <h2 class="restaurant__heading">Restaurants</h2>
         <div class="restaurant__card-container">
-            <article class="card">
+            <article class="card card--img">
                 <div class="restaurant__card__img-container">
                     <p class="restaurant__card__new-tag"></p>
                 </div>
@@ -84,7 +85,7 @@
                     <i class="far fa-heart restaurant__card__icon"></i>
                 </div>
             </article>
-            <article class="card">
+            <article class="card card--img">
                 <div class="restaurant__card__img-container">
                     <p class="restaurant__card__new-tag"></p>
                 </div>
@@ -94,7 +95,7 @@
                     <i class="far fa-heart restaurant__card__icon"></i>
                 </div>
             </article>
-            <article class="card">
+            <article class="card card--img">
                 <div class="restaurant__card__img-container">
                 </div>
                 <div class="restaurant__card__text-container">
@@ -103,7 +104,7 @@
                     <i class="far fa-heart restaurant__card__icon"></i>
                 </div>
             </article>
-            <article class="card">
+            <article class="card card--img">
                 <div class="restaurant__card__img-container">
                 </div>
                 <div class="restaurant__card__text-container">
@@ -119,10 +120,10 @@
 
     <!-- FOOTER -->
     <footer class="footer">
-        <img src="" alt="" class="footer__logo">
-        <a href="" class="footer__text--bold"><i class="fas fa-utensils footer__text__icon"></i> Proposer un
+        <h1 class="footer__logo">ohmyfood</h1>
+        <a href="" class="footer__text footer__text--bold"><i class="fas fa-utensils footer__text__icon"></i> Proposer un
             restaurant</a>
-        <a href="" class="footer__text--bold"><i class="fas fa-people-arrows footer__text__icon"></i> Devenir
+        <a href="" class="footer__text footer__text--bold"><i class="fas fa-people-arrows footer__text__icon"></i> Devenir
             partenaire</a>
         <a href="" class="footer__text">Mentions légales</a>
         <a href="" class="footer__text">Contact</a>

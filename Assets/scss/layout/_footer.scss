@@ -1,0 +1,40 @@
+@use '../abstracts' as *;
+@use '../base' as *;
+
+
+.footer {
+
+    background-color: $color-footer;
+    padding: 1.5em;
+
+    a {
+        text-decoration: none;
+        display: block;
+        color: $color-white;
+    }
+
+    .footer__logo {
+        color: $color-white;
+        font-family: $font-headings;
+        font-size: $Regular-fontSize;
+        font-weight: 400;
+        margin: 0 0 1em 0;
+    }
+
+    .footer__text {
+        font-size: $Regular-fontSize;
+
+        &:not(:last-child) {
+            margin-bottom: .5em;
+        }
+
+        &--bold {
+            font-weight: 500;
+        }
+
+        &__icon {
+            font-size: 12px;
+            margin-right: .5em;
+        }
+    }
+}

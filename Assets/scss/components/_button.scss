@@ -2,9 +2,11 @@
 
 .cta {
     display: inline-block;
-    padding: .7em 1.2em;
+    padding: .8em 1.3em;
     background: linear-gradient(to bottom right, $color-secondary, $color-primary);
     color: $color-white;
     text-decoration: none;
     border-radius: 25px;
+    margin: 2em auto;
+    box-shadow: 3px 3px 7px $color-shadow;
 }

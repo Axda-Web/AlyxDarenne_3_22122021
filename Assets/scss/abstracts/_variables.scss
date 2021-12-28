@@ -1,7 +1,12 @@
 
-$color-white: #FFF;
-$color-black: #000;
+$color-white: hsla(0,0%,100%,1);
+$color-black: hsla(0,0%,0%,1);
 
-$color-primary: #9356DC;
-$color-secondary: #FF79DA;
-$color-tertiary: #99E2D0;
+$color-location: hsla(0, 0%, 93%,1);
+$color-shadow: hsla(0,0%,83%,1);
+$color-footer: hsla(0, 0%, 24%,1);
+$color-sectionBackground: hsla(0, 0%, 96%,1);
+
+$color-primary: hsla(267, 66%, 60%,1);
+$color-secondary: hsl(317, 100%, 74%,1);
+$color-tertiary: hsl(165, 56%, 75%,1)

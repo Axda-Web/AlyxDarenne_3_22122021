@@ -1,0 +1,39 @@
+@use '../abstracts' as *;
+@use '../base' as *;
+@use '../components' as *;
+
+
+.hero {
+
+    .hero__location {
+        background-color: $color-location;
+        text-align: center;
+        padding: 1em 0;
+        
+        .hero__location__text {
+            font-size: $Small-fontSize;
+            color: $color-footer;
+        }
+
+        .hero__location__text__icon {
+            margin-right: .8em;
+        }
+    }
+
+    .hero-container {
+        text-align: center;
+        background-color: $color-sectionBackground;
+        padding: 1em;
+        
+
+        .hero__heading {
+            text-align: center;
+            padding: .8em 2em;
+            margin: 0;
+        }
+    
+        .hero__subheading {
+            text-align: center;
+        }
+    }
+}

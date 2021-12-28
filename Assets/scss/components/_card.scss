@@ -1,0 +1,14 @@
+@use '../abstracts' as *;
+@use '../base' as *;
+
+
+.card {
+    border-radius: 15px;
+    box-shadow: 3px 3px 7px $color-shadow;
+    width: 94%;
+    margin: 0 auto;
+
+    &:not(:last-child) {
+        margin-bottom: 1em;
+    }
+}
