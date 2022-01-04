@@ -1,39 +1,187 @@
-@use '../abstracts' as *;
-@use '../base' as *;
-@use '../components' as *;
-
+@use "../abstracts" as *;
+@use "../base" as *;
+@use "../components" as *;
 
 .hero {
+  .hero__location {
+    background-color: $color-location;
+    text-align: center;
+    padding: 1em 0;
 
-    .hero__location {
-        background-color: $color-location;
-        text-align: center;
-        padding: 1em 0;
-        
-        .hero__location__text {
-            font-size: $Small-fontSize;
-            color: $color-footer;
-        }
+    .hero__location__text {
+      font-size: $Small-fontSize;
+      color: $color-footer;
+    }
 
-        .hero__location__text__icon {
-            margin-right: .8em;
+    .hero__location__text__icon {
+      margin-right: 0.8em;
+    }
+  }
+
+  .hero-container {
+    text-align: center;
+    background-color: $color-sectionBackground;
+    padding: 1em;
+
+    .hero__heading {
+      text-align: center;
+      padding: 0.8em 2em;
+      margin: 0;
+    }
+
+    .hero__subheading {
+      text-align: center;
+    }
+  }
+}
+
+.operation {
+  padding: 2.5em 1.5em;
+
+  .operation__heading {
+    margin-bottom: 1em;
+  }
+
+  .operation__card {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 1.7em 2em;
+    position: relative;
+
+    &--active {
+        background-color: $color-cardBackground;
+
+        .operation__card__icon {
+            color: $color-primary;
         }
     }
 
-    .hero-container {
-        text-align: center;
-        background-color: $color-sectionBackground;
-        padding: 1em;
-        
-
-        .hero__heading {
-            text-align: center;
-            padding: .8em 2em;
-            margin: 0;
+    &__one:before {
+            content: "1";
+            position: absolute;
+            left: 0;
+            margin-left: -10px;
+            padding: 0.3em 0.6em;
+            background-color: $color-primary;
+            color: $color-white;
+            border-radius: 25px;
+            font-size: $Small-fontSize;
         }
-    
-        .hero__subheading {
-            text-align: center;
+
+    &__two:before {
+        content: "2";
+        position: absolute;
+        left: 0;
+        margin-left: -10px;
+        padding: 0.3em 0.6em;
+        background-color: $color-primary;
+        color: $color-white;
+        border-radius: 25px;
+        font-size: $Small-fontSize;
+    }
+
+    &__three:before {
+        content: "3";
+        position: absolute;
+        left: 0;
+        margin-left: -10px;
+        padding: 0.3em 0.6em;
+        background-color: $color-primary;
+        color: $color-white;
+        border-radius: 25px;
+        font-size: $Small-fontSize;
+    }
+
+    /*.operation__card__one {
+        @extend %operation-card;
+
+      &::before {
+        @include operation-card-before("1");
+      }
+    }
+
+    .operation__card__two {
+        @extend %operation-card;
+
+      &::before {
+        @include operation-card-before("2");
+      }
+    }
+
+    .operation__card__three {
+        @extend %operation-card;
+
+      &::before {
+        @include operation-card-before("3");
+      }
+    }*/
+
+    &__icon {
+        color: $color-footer;
+        font-size: $Big-fontSize;
+    }
+
+    &__text {
+        margin-left: 1.5em;
+        font-weight: 500;
+    }
+  }
+}
+
+.restaurant {
+    padding: 3em 1.5em 4em 1.5em;
+    background-color: $color-sectionBackground;
+
+    .restaurant__heading {
+        margin-bottom: 1em;
+    }
+
+    .restaurant__card__img {
+        width: 100%;
+        height: 190px;
+        object-fit: cover;
+        border-top-left-radius: 15px;
+        border-top-right-radius: 15px;
+
+        &--2 {
+            object-position: 50% 61%;
+        }
+
+        &--3 {
+            object-position: 70% 90%;
+        }
+
+        &--4 {
+            object-position: 50% 90%;
+        }
+    }
+
+    .restaurant__card__text-container {
+        padding: .8em;
+        display: grid;
+        grid-template-columns: 3fr 1fr;
+        grid-template-rows: auto auto;
+        gap: .3em;
+        grid-template-areas: 
+            "heading heart"
+            "subheading heart";
+        
+        .restaurant__card__heading {
+            grid-area: heading;
+            font-size: $Medium-fontSize;
+        }
+
+        .restaurant__card__subheading {
+            grid-area: subheading;
+            font-size: $Regular-fontSize;
+        }
+
+        .restaurant__card__icon {
+            grid-area: heart;
+            align-self: start;
+            justify-self: center;
+            font-size: 1.5rem;
         }
     }
 }

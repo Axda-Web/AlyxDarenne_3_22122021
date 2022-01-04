@@ -1,0 +1,95 @@
+@use "../abstracts" as *;
+@use "../base" as *;
+@use "../components" as *;
+
+
+.hero__header--flex {
+    display: flex;
+    align-items: center;
+    padding-left: 1em;
+
+    .hero__header__return {
+        color: inherit;
+    }
+
+    .hero__header__logo {
+        margin-left: 23%;
+    }
+}
+
+.hero__img {
+    max-width: 100%;
+    object-fit: cover;
+}
+
+.menu {
+    padding: 2em 1em;
+    border-top-right-radius: 25px;
+    border-top-left-radius: 25px;
+    background-color: $color-sectionBackground;
+
+    &__heading-container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        .menu__heading__text {
+            font-family: $font-headings;
+            font-size: $Logo-fontSize;
+        }
+
+        .menu__heading__icon {
+            font-size: $Big-fontSize;
+        }
+    }
+
+    &__section-title {
+        text-transform: uppercase;
+        font-weight: 300;
+        font-size: $Regular-fontSize;
+        margin-top: 2em;
+        margin-bottom: 1em;
+
+        &::after {
+            content: "";
+            width: 2em;
+            height: 4px;
+            background-color: $color-tertiary;
+            
+            z-index: 10;
+        }
+    }
+
+    &__card {
+        padding: .8em;
+        display: grid;
+        grid-template-columns: 3fr 1fr;
+        grid-template-rows: auto auto;
+        gap: .3em;
+        grid-template-areas: 
+            "heading price"
+            "subheading price";
+
+        &:not(:last-child) {
+            margin-bottom: 3em;
+        }
+        
+        .menu__card__title {
+            grid-area: heading;
+            font-size: $Medium-fontSize;
+            font-weight: 700;
+        }
+
+        .menu__card__subtitle {
+            grid-area: subheading;
+            font-size: $Regular-fontSize;
+        }
+
+        .menu__card__price {
+            grid-area: price;
+            align-self: end;
+            justify-self: center;
+            font-size: $Regular-fontSize;
+        }
+    }
+}
