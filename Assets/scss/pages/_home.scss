@@ -37,6 +37,7 @@
 
 .operation {
   padding: 2.5em 1.5em;
+  background-color: $color-white;
 
   .operation__heading {
     margin-bottom: 1em;
@@ -131,7 +132,6 @@
 
 .restaurant {
     padding: 3em 1.5em 4em 1.5em;
-    background-color: $color-sectionBackground;
 
     .restaurant__heading {
         margin-bottom: 1em;

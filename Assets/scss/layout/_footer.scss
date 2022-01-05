@@ -22,14 +22,19 @@
     }
 
     .footer__text {
-        font-size: $Regular-fontSize;
+        font-size: $Small-fontSize;
 
         &:not(:last-child) {
             margin-bottom: .5em;
         }
 
         &--bold {
-            font-weight: 500;
+            font-weight: 700;
+            font-size: $Small-fontSize;
+            
+            &:not(:last-child) {
+            margin-bottom: .5em;
+            }
         }
 
         &__icon {
