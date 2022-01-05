@@ -206,6 +206,11 @@ p, a {
 .restaurant {
   padding: 3em 1.5em 4em 1.5em;
 }
+.restaurant a {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+}
 .restaurant .restaurant__heading {
   margin-bottom: 1em;
 }
@@ -224,6 +229,19 @@ p, a {
 }
 .restaurant .restaurant__card__img--4 {
   object-position: 50% 90%;
+}
+.restaurant .restaurant__card__img-container {
+  position: relative;
+}
+.restaurant .restaurant__card__img-container .restaurant__card__new-tag {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 0.875rem;
+  background-color: #9ce3d1;
+  color: #006366;
+  padding: 0.4em 0.7em;
+  border-radius: 3px;
 }
 .restaurant .restaurant__card__text-container {
   padding: 0.8em;

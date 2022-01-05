@@ -133,6 +133,12 @@
 .restaurant {
     padding: 3em 1.5em 4em 1.5em;
 
+    a {
+      display: block;
+      text-decoration: none;
+      color: inherit;
+    }
+
     .restaurant__heading {
         margin-bottom: 1em;
     }
@@ -155,6 +161,21 @@
         &--4 {
             object-position: 50% 90%;
         }
+    }
+
+    .restaurant__card__img-container {
+      position: relative;
+
+      .restaurant__card__new-tag {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        font-size: $Small-fontSize;
+        background-color: $color-tertiary;
+        color: $color-newTag;
+        padding: .4em .7em;
+        border-radius: 3px;
+      }
     }
 
     .restaurant__card__text-container {
