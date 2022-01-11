@@ -76,22 +76,36 @@ p, a {
 }
 .footer .footer__text {
   font-size: 0.875rem;
-}
-.footer .footer__text:not(:last-child) {
   margin-bottom: 0.5em;
 }
 .footer .footer__text--bold {
   font-weight: 700;
   font-size: 0.875rem;
 }
-.footer .footer__text--bold:not(:last-child) {
-  margin-bottom: 0.5em;
-}
 .footer .footer__text__icon {
   font-size: 12px;
   margin-right: 0.5em;
 }
 
+/* RESPONSIVE */
+@media (min-width: 668px) {
+  .footer__logo {
+    text-align: center;
+  }
+
+  .footer__text-container {
+    display: flex;
+    justify-content: space-around;
+    color: red;
+  }
+}
+@media (min-width: 1046px) {
+  .footer__text-container-half {
+    display: flex;
+    width: 50%;
+    justify-content: space-evenly;
+  }
+}
 .hero .hero__location {
   background-color: #ededed;
   text-align: center;
@@ -131,6 +145,7 @@ p, a {
   justify-content: flex-start;
   padding: 1.7em 2em;
   position: relative;
+  max-width: 300px;
   /*.operation__card__one {
       @extend %operation-card;
 
@@ -266,20 +281,55 @@ p, a {
   font-size: 1.5rem;
 }
 
+/* RESPONSIVE */
+@media (min-width: 668px) {
+  .operation__heading {
+    text-align: center;
+  }
+
+  .restaurant__heading {
+    text-align: center;
+  }
+
+  .restaurant__card-container {
+    display: flex;
+    flex-flow: row wrap;
+  }
+
+  .restaurant__card {
+    width: 47.5%;
+    height: 260px;
+  }
+}
+@media (min-width: 1046px) {
+  .operation__card-container {
+    display: flex;
+  }
+
+  .operation__card {
+    height: 75px;
+  }
+
+  .restaurant__card {
+    width: 23%;
+  }
+}
 body {
   background-color: whitesmoke;
 }
 
-.hero__header--flex {
-  display: flex;
+.hero__header--grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
   align-items: center;
   padding-left: 1em;
 }
-.hero__header--flex .hero__header__return {
+.hero__header--grid .hero__header__return {
   color: inherit;
+  justify-self: left;
 }
-.hero__header--flex .hero__header__logo {
-  margin-left: 27%;
+.hero__header--grid .hero__header__logo {
+  justify-self: center;
 }
 
 .hero__img {
@@ -349,6 +399,38 @@ body {
 .menu .cta-container {
   display: flex;
   justify-content: center;
+}
+
+/* RESPONSIVE */
+@media (min-width: 668px) {
+  .menu__heading-container {
+    justify-content: center;
+    column-gap: 1em;
+  }
+
+  .menu__section-title {
+    text-align: center;
+  }
+
+  .menu__card {
+    max-width: 350px;
+  }
+}
+@media (min-width: 1046px) {
+  .menu__card-container {
+    display: flex;
+    column-gap: 1em;
+  }
+
+  .menu__card {
+    height: 88px;
+  }
+  .menu__card__title {
+    align-self: center;
+  }
+  .menu__card__price {
+    align-self: top;
+  }
 }
 
 /*# sourceMappingURL=style.css.map */

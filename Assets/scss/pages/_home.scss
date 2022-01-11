@@ -49,6 +49,7 @@
     justify-content: flex-start;
     padding: 1.7em 2em;
     position: relative;
+    max-width: 300px;
 
     &--active {
         background-color: $color-cardBackground;
@@ -205,4 +206,42 @@
             font-size: 1.5rem;
         }
     }
+}
+
+
+/* RESPONSIVE */
+
+@media (min-width: 668px){
+
+  .operation__heading {
+    text-align: center;
+  }
+
+  .restaurant__heading {
+    text-align: center;
+  }
+
+  .restaurant__card-container {
+    display: flex;
+    flex-flow: row wrap;
+  }
+
+  .restaurant__card {
+    width: 47.5%;
+    height: 260px;
+  }
+}
+
+@media (min-width: 1046px){
+  .operation__card-container {
+    display: flex;
+  }
+
+  .operation__card {
+    height: 75px;
+  }
+
+  .restaurant__card {
+    width: 23%;
+  }
 }

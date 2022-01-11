@@ -3,7 +3,6 @@
 
 
 .footer {
-
     background-color: $color-footer;
     padding: 1.5em 1.5em 2em 1.5em;
 
@@ -23,18 +22,11 @@
 
     .footer__text {
         font-size: $Small-fontSize;
-
-        &:not(:last-child) {
-            margin-bottom: .5em;
-        }
+        margin-bottom: .5em;
 
         &--bold {
             font-weight: 700;
             font-size: $Small-fontSize;
-            
-            &:not(:last-child) {
-            margin-bottom: .5em;
-            }
         }
 
         &__icon {
@@ -43,3 +35,26 @@
         }
     }
 }
+
+/* RESPONSIVE */
+
+@media (min-width: 668px){
+    .footer__logo {
+        text-align: center;
+    }
+
+    .footer__text-container {
+        display: flex;
+        justify-content: space-around;
+        color: red;
+    }
+  }
+
+  @media (min-width: 1046px){
+
+    .footer__text-container-half {
+        display: flex;
+        width: 50%;
+        justify-content: space-evenly;
+    }
+  }

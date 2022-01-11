@@ -30,13 +30,13 @@
 
     <!-- HERO SECTION -->
     <section class="hero">
-        <header class="hero__header hero__header--flex">
+        <header class="hero__header hero__header--grid">
             <a class="hero__header__return" href="./index.html"><i
                     class="fas fa-arrow-left hero__header__return__icon"></i></a>
             <h1 class="hero__header__logo">ohmyfood</h1>
         </header>
         <img src="./Assets/images/restaurants/toa-heftiba-DQKerTsQwi0-unsplash.jpg"
-            alt="photo plat restaurant a la française" class="hero__img">
+            alt="photo plat restaurant a la française" class="hero__img hero__img--a-la-francaise">
     </section>
     <!-- HERO SECTION END-->
 
@@ -120,12 +120,22 @@
     <!-- FOOTER -->
     <footer class="footer">
         <h1 class="footer__logo">ohmyfood</h1>
-        <a href="" class="footer__text--bold"><i class="fas fa-utensils footer__text__icon"></i> Proposer un
-            restaurant</a>
-        <a href="" class="footer__text--bold"><i class="fas fa-people-arrows footer__text__icon"></i> Devenir
-            partenaire</a>
-        <a href="" class="footer__text">Mentions légales</a>
-        <a href="" class="footer__text">Contact</a>
+        <div class="footer__text-container">
+            <div class="footer__text-container-half">
+                <a href="" class="footer__text footer__text--bold"><i class="fas fa-utensils footer__text__icon"></i>
+                    Proposer
+                    un
+                    restaurant</a>
+                <a href="" class="footer__text footer__text--bold"><i
+                        class="fas fa-people-arrows footer__text__icon"></i>
+                    Devenir
+                    partenaire</a>
+            </div>
+            <div class="footer__text-container-half">
+                <a href="" class="footer__text">Mentions légales</a>
+                <a href="mailto:contact@ohmyfood.fr" class="footer__text">Contact</a>
+            </div>
+        </div>
     </footer>
     <!-- FOOTER END -->
 
