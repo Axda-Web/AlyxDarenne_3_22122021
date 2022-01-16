@@ -65,16 +65,50 @@ body {
         margin-bottom: 1.5em;
     }
 
+    &__card-container--starter {
+        opacity: 0;
+        animation: starter 1s ease-out 1s 1 forwards;
+    }
+
+    @keyframes starter {
+        100% {
+            opacity: 1;
+        }
+    }
+
+    &__card-container--course {
+        opacity: 0;
+        animation: course 1s ease-out 2s 1 forwards;
+    }
+
+    @keyframes course {
+        100% {
+            opacity: 1;
+        }
+    }
+
+    &__card-container--dessert {
+        opacity: 0;
+        animation: dessert 1s ease-out 3s 1 forwards;
+    }
+
+    @keyframes dessert {
+        100% {
+            opacity: 1;
+        }
+    }
+
     &__card {
         padding: .8em;
         background-color: $color-white;
+        position: relative;
         display: grid;
         grid-template-columns: 4fr 1fr;
         grid-template-rows: auto auto;
         gap: .3em;
         grid-template-areas: 
-            "heading price"
-            "subheading price";
+            "heading price anim"
+            "subheading price anim";
         
         .menu__card__title {
             grid-area: heading;
@@ -94,6 +128,49 @@ body {
             justify-self: right;
             font-size: $Regular-fontSize;
             font-weight: bold;
+        }
+
+        .card-anim {
+            grid-area: anim;
+            align-self: center;
+            width: 0;
+            opacity: 0;
+            background-color: $color-tertiary;
+            color: $color-white;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 10;
+
+            &:hover {
+                width: 30px;
+                opacity: 1;
+                margin-left: .8em;
+                padding-left: 17px;
+                padding-right: 5px;
+                
+            }
+
+            &--background {
+                position: absolute;
+                top: 0;
+                right: 0;
+                height: 70px;
+                width: 0;
+                opacity: 0;
+                background-color: red;
+                color: $color-white;
+                height: 100%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                z-index: 20;
+
+                &:hover {
+                    width: 30px;
+                }
+            }
         }
     }
 

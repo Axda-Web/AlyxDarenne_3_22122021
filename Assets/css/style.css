@@ -31,10 +31,44 @@ p, a {
   border-radius: 25px;
   margin: 2em auto;
   box-shadow: 3px 3px 7px #d4d4d4;
+  transition: background 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
 }
 .cta.menu__cta {
   padding: 0.8em 2.5em;
   margin-top: 2.5em;
+}
+.cta:hover {
+  background: linear-gradient(to bottom right, #ff85dc, #985ede);
+  box-shadow: 3px 3px 7px #adadad;
+}
+
+.like-btn {
+  position: relative;
+  justify-self: end;
+  width: 30px;
+}
+.like-btn .heart-empty {
+  position: absolute;
+  opacity: 1;
+  transition: opacity 0.6s ease-in-out;
+}
+.like-btn .heart-empty:hover {
+  opacity: 0;
+}
+.like-btn .heart-full {
+  opacity: 0;
+  z-index: 1;
+  transition: opacity 0.6s ease-in-out;
+  background-image: linear-gradient(to bottom right, #ff7ad9, #9256dc);
+  background-size: 100%;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -moz-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -moz-text-fill-color: transparent;
+}
+.like-btn .heart-full:hover {
+  opacity: 1;
 }
 
 .card {
@@ -106,6 +140,51 @@ p, a {
     justify-content: space-evenly;
   }
 }
+.loader-container {
+  position: absolute;
+  background-color: white;
+  top: 60px;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 100;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  animation: loader 3s ease-out 1 forwards;
+  -moz-animation: loader 3s ease-out 1 forwards;
+}
+@keyframes loader {
+  75% {
+    opacity: 1;
+  }
+  99% {
+    opacity: 0;
+  }
+  100% {
+    z-index: -10;
+  }
+}
+.loader-container .spinner {
+  z-index: 20;
+  border: 12px solid #f3f3f3;
+  border-top: 12px solid #9256dc;
+  border-right: 12px solid #ff7ad9;
+  border-bottom: 12px solid #9ce3d1;
+  border-radius: 50%;
+  width: 80px;
+  height: 80px;
+  animation: spin 2s linear infinite;
+}
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
 .hero .hero__location {
   background-color: #ededed;
   text-align: center;
@@ -146,29 +225,6 @@ p, a {
   padding: 1.7em 2em;
   position: relative;
   max-width: 300px;
-  /*.operation__card__one {
-      @extend %operation-card;
-
-    &::before {
-      @include operation-card-before("1");
-    }
-  }
-
-  .operation__card__two {
-      @extend %operation-card;
-
-    &::before {
-      @include operation-card-before("2");
-    }
-  }
-
-  .operation__card__three {
-      @extend %operation-card;
-
-    &::before {
-      @include operation-card-before("3");
-    }
-  }*/
 }
 .operation .operation__card--active {
   background-color: rgba(255, 122, 217, 0.1);
@@ -370,14 +426,42 @@ body {
   margin-top: 2.5em;
   margin-bottom: 1.5em;
 }
+.menu__card-container--starter {
+  opacity: 0;
+  animation: starter 1s ease-out 1s 1 forwards;
+}
+@keyframes starter {
+  100% {
+    opacity: 1;
+  }
+}
+.menu__card-container--course {
+  opacity: 0;
+  animation: course 1s ease-out 2s 1 forwards;
+}
+@keyframes course {
+  100% {
+    opacity: 1;
+  }
+}
+.menu__card-container--dessert {
+  opacity: 0;
+  animation: dessert 1s ease-out 3s 1 forwards;
+}
+@keyframes dessert {
+  100% {
+    opacity: 1;
+  }
+}
 .menu__card {
   padding: 0.8em;
   background-color: white;
+  position: relative;
   display: grid;
   grid-template-columns: 4fr 1fr;
   grid-template-rows: auto auto;
   gap: 0.3em;
-  grid-template-areas: "heading price" "subheading price";
+  grid-template-areas: "heading price anim" "subheading price anim";
 }
 .menu__card .menu__card__title {
   grid-area: heading;
@@ -395,6 +479,44 @@ body {
   justify-self: right;
   font-size: 1rem;
   font-weight: bold;
+}
+.menu__card .card-anim {
+  grid-area: anim;
+  align-self: center;
+  width: 0;
+  opacity: 0;
+  background-color: #9ce3d1;
+  color: white;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 10;
+}
+.menu__card .card-anim:hover {
+  width: 30px;
+  opacity: 1;
+  margin-left: 0.8em;
+  padding-left: 17px;
+  padding-right: 5px;
+}
+.menu__card .card-anim--background {
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 70px;
+  width: 0;
+  opacity: 0;
+  background-color: red;
+  color: white;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 20;
+}
+.menu__card .card-anim--background:hover {
+  width: 30px;
 }
 .menu .cta-container {
   display: flex;
