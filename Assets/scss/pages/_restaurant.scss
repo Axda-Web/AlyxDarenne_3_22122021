@@ -65,6 +65,8 @@ body {
         margin-bottom: 1.5em;
     }
 
+    /* CARD APPEARANCE ANIMATION */
+
     &__card-container--starter {
         opacity: 0;
         animation: starter 1s ease-out 1s 1 forwards;
@@ -97,9 +99,29 @@ body {
             opacity: 1;
         }
     }
+    /* CARD APPEARANCE ANIMATION END*/
 
+
+    /* CARD HOVER ANIMATION */
+    
     &__card {
+        display: flex;
+        background-color: $color-tertiary;
+        transition: width 1s ease-in-out;
+
+        &:hover .anim-container {
+            width: 20%;
+            transform: rotate(360deg);
+            opacity: 1;
+        }
+    }
+    /* CARD HOVER ANIMATION END*/
+
+    .text-container {
         padding: .8em;
+        width: 100%;
+        border-radius: 15px;
+        text-overflow: ellipsis;
         background-color: $color-white;
         position: relative;
         display: grid;
@@ -129,48 +151,26 @@ body {
             font-size: $Regular-fontSize;
             font-weight: bold;
         }
+    }
 
-        .card-anim {
-            grid-area: anim;
-            align-self: center;
-            width: 0;
-            opacity: 0;
-            background-color: $color-tertiary;
+    .anim-container {
+        z-index: 10;
+        width: 0;
+        transition: all 1s linear;
+        overflow: hidden;
+        position: relative;
+
+        .anim__icon {
+            background-color: transparent;
+            overflow: hidden;
             color: $color-white;
-            height: 100%;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            z-index: 10;
-
-            &:hover {
-                width: 30px;
-                opacity: 1;
-                margin-left: .8em;
-                padding-left: 17px;
-                padding-right: 5px;
-                
-            }
-
-            &--background {
-                position: absolute;
-                top: 0;
-                right: 0;
-                height: 70px;
-                width: 0;
-                opacity: 0;
-                background-color: red;
-                color: $color-white;
-                height: 100%;
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                z-index: 20;
-
-                &:hover {
-                    width: 30px;
-                }
-            }
+            border-top-right-radius: 0;
+            border-bottom-right-radius: 0;
+            font-size: 1.5rem;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
         }
     }
 

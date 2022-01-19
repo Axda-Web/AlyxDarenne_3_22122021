@@ -3,9 +3,9 @@
 @use "../components" as *;
 
 .loader-container {
-  position: absolute;
+  position: fixed;
   background-color: $color-white;
-  top: 60px;
+  top: 0;
   left: 0;
   right: 0;
   bottom: 0;
@@ -28,7 +28,7 @@
     }
 
     100% {
-      z-index: -10;
+      z-index: -1;
     }
   }
   
@@ -159,6 +159,7 @@
 
 .restaurant {
     padding: 3em 1.5em 4em 1.5em;
+    background-color: $color-sectionBackground;
 
     a {
       display: block;
