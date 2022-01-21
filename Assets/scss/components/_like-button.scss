@@ -4,19 +4,18 @@
     position: relative;
     justify-self: end;
     width: 30px;
+    
 
     .heart-empty {
         position: absolute;
-        opacity: 1;
-        //transition: opacity .6s ease-in-out;
-
-       
+        transform-origin: center;
+        transform: scale(.9);
     }
 
     .heart-full {
         opacity: 0;
-        z-index: 999;
-        transition: opacity .6s ease-in-out;
+        position: absolute;
+        transition: opacity .6s ease-in-out .2s;
         background-image: linear-gradient(to bottom right, $color-secondary, $color-primary);
         background-size: 100%;
         background-clip: text;
