@@ -262,6 +262,8 @@
 @media (min-width: 1046px){
   .operation__card-container {
     display: flex;
+    max-width: 1170px;
+    margin: 0 auto;
   }
 
   .operation__card {

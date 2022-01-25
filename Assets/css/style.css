@@ -360,6 +360,8 @@ p, a {
 @media (min-width: 1046px) {
   .operation__card-container {
     display: flex;
+    max-width: 1170px;
+    margin: 0 auto;
   }
 
   .operation__card {
@@ -459,63 +461,28 @@ body {
 }
 .menu__card {
   display: flex;
-  background-color: #9ce3d1;
   height: 70px;
   max-width: 500px;
+  overflow: hidden;
 }
 .menu__card:hover .anim-container {
-  /* width: 20%;
-  transform: rotate(360deg);
-  opacity: 1; */
-  animation: anim 1.6s linear forwards;
+  width: 80px;
 }
-.menu__card:hover .text-container {
-  animation: text 1.6s linear forwards;
+.menu__card:hover .anim__icon {
+  animation: icon-rotation 0.6s forwards;
 }
-@keyframes anim {
-  20% {
-    opacity: 1;
-  }
-  40% {
-    transform: rotate(360deg);
-    width: 80px;
-    opacity: 1;
-  }
-  70% {
-    transform: rotate(360deg);
-    width: 80px;
-    opacity: 1;
-  }
-  90% {
-    transform: rotate(360deg);
-    opacity: 1;
+@keyframes icon-rotation {
+  0% {
+    transform: rotate(90deg);
   }
   100% {
     transform: rotate(360deg);
-    width: 0;
-    opacity: 0;
-  }
-}
-@keyframes text {
-  10% {
-    border-top-right-radius: 0;
-    border-bottom-right-radius: 0;
-  }
-  95% {
-    border-top-right-radius: 0;
-    border-bottom-right-radius: 0;
-  }
-  100% {
-    border-top-right-radius: 15px;
-    border-bottom-right-radius: 15px;
   }
 }
 .menu .text-container {
   padding: 0.8em;
   width: 100%;
-  border-radius: 15px;
   background-color: white;
-  position: relative;
   display: grid;
   grid-template-columns: 4fr 1fr;
   grid-template-rows: auto auto;
@@ -546,23 +513,19 @@ body {
   font-weight: bold;
 }
 .menu .anim-container {
-  z-index: 10;
   width: 0;
-  opacity: 0;
+  background-color: #9ce3d1;
   overflow: hidden;
-  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: width 0.6s;
 }
 .menu .anim-container .anim__icon {
-  background-color: transparent;
-  overflow: hidden;
   color: white;
   border-top-right-radius: 0;
   border-bottom-right-radius: 0;
   font-size: 1.5rem;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
 }
 .menu .cta-container {
   display: flex;
