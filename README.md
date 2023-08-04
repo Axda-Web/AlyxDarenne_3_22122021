@@ -38,24 +38,3 @@ To get started with the Ohmyfood project, follow the steps below:
 3. Open the `index.html` file in your favorite browser:
 
 A deployed version of the Ohmyfood project is available on Vercel at [Ohmyfood](https://oh-my-food-kappa.vercel.app/).
-
-
-
-### Technologies 
-
-- HTML
-- CSS
-- Sass
-
-
-### Concepts
-
-- Responsive Design
-- Mobile First Design
-- Cross-browser compatibility
-- CSS animations
-  
-
-### Description
-
-Website design for Ohmyfood. Implementation of advanced CSS animation. Prototype developed respecting the mobile first approach. Moreover, it is responsive and works on different browsers.
