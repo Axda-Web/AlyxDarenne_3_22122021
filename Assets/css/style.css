@@ -25,12 +25,12 @@ p, a {
 .cta {
   display: inline-block;
   padding: 0.8em 1.3em;
-  background: linear-gradient(to bottom right, #ff7ad9, #9256dc);
-  color: white;
+  background: linear-gradient(to bottom right, hsl(317, 100%, 74%), hsl(267, 66%, 60%));
+  color: hsl(0, 0%, 100%);
   text-decoration: none;
   border-radius: 25px;
   margin: 2em auto;
-  box-shadow: 3px 3px 7px #d4d4d4;
+  box-shadow: 3px 3px 7px hsl(0, 0%, 83%);
   transition: background 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
 }
 .cta.menu__cta {
@@ -56,7 +56,7 @@ p, a {
   opacity: 0;
   position: absolute;
   transition: opacity 0.6s ease-in-out 0.2s;
-  background-image: linear-gradient(to bottom right, #ff7ad9, #9256dc);
+  background-image: linear-gradient(to bottom right, hsl(317, 100%, 74%), hsl(267, 66%, 60%));
   background-size: 100%;
   background-clip: text;
   -webkit-background-clip: text;
@@ -70,7 +70,7 @@ p, a {
 
 .card {
   border-radius: 15px;
-  box-shadow: 3px 3px 7px #d4d4d4;
+  box-shadow: 3px 3px 7px hsl(0, 0%, 83%);
   width: 100%;
   margin: 0 auto;
 }
@@ -82,7 +82,7 @@ p, a {
 }
 
 .hero__header {
-  background-color: white;
+  background-color: hsl(0, 0%, 100%);
 }
 .hero__header .hero__header__logo {
   text-align: center;
@@ -93,16 +93,16 @@ p, a {
 }
 
 .footer {
-  background-color: #3d3d3d;
+  background-color: hsl(0, 0%, 24%);
   padding: 1.5em 1.5em 2em 1.5em;
 }
 .footer a {
   text-decoration: none;
   display: block;
-  color: white;
+  color: hsl(0, 0%, 100%);
 }
 .footer .footer__logo {
-  color: white;
+  color: hsl(0, 0%, 100%);
   font-family: "Shrikhand", cursive;
   font-size: 1rem;
   font-weight: 400;
@@ -126,22 +126,13 @@ p, a {
   .footer__logo {
     text-align: center;
   }
-
-  .footer__text-container {
-    display: flex;
-    justify-content: space-around;
-  }
-}
-@media (min-width: 1046px) {
-  .footer__text-container-half {
-    display: flex;
-    width: 50%;
-    justify-content: space-evenly;
+  .footer__text {
+    text-align: center;
   }
 }
 .loader-container {
   position: fixed;
-  background-color: white;
+  background-color: hsl(0, 0%, 100%);
   top: 0;
   left: 0;
   right: 0;
@@ -167,9 +158,9 @@ p, a {
 .loader-container .spinner {
   z-index: 20;
   border: 12px solid #f3f3f3;
-  border-top: 12px solid #9256dc;
-  border-right: 12px solid #ff7ad9;
-  border-bottom: 12px solid #9ce3d1;
+  border-top: 12px solid hsl(267, 66%, 60%);
+  border-right: 12px solid hsl(317, 100%, 74%);
+  border-bottom: 12px solid hsl(165, 56%, 75%);
   border-radius: 50%;
   width: 80px;
   height: 80px;
@@ -184,21 +175,28 @@ p, a {
   }
 }
 
+.main-container {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
 .hero .hero__location {
-  background-color: #ededed;
+  background-color: hsl(0, 0%, 93%);
   text-align: center;
   padding: 1em 0;
 }
 .hero .hero__location .hero__location__text {
   font-size: 0.875rem;
-  color: #3d3d3d;
+  color: hsl(0, 0%, 24%);
 }
 .hero .hero__location .hero__location__text__icon {
   margin-right: 0.8em;
 }
 .hero .hero-container {
   text-align: center;
-  background-color: whitesmoke;
+  background-color: hsl(0, 0%, 96%);
   padding: 1em;
 }
 .hero .hero-container .hero__heading {
@@ -212,7 +210,7 @@ p, a {
 
 .operation {
   padding: 2.5em 1.5em;
-  background-color: white;
+  background-color: hsl(0, 0%, 100%);
 }
 .operation .operation__heading {
   margin-bottom: 1em;
@@ -224,12 +222,13 @@ p, a {
   padding: 1.7em 2em;
   position: relative;
   max-width: 300px;
+  cursor: pointer;
 }
-.operation .operation__card--active {
-  background-color: rgba(255, 122, 217, 0.1);
+.operation .operation__card:hover {
+  background-color: hsla(317, 100%, 74%, 0.1);
 }
-.operation .operation__card--active .operation__card__icon {
-  color: #9256dc;
+.operation .operation__card:hover .operation__card__icon {
+  color: hsl(267, 66%, 60%);
 }
 .operation .operation__card__one:before {
   content: "1";
@@ -237,8 +236,8 @@ p, a {
   left: 0;
   margin-left: -10px;
   padding: 0.3em 0.6em;
-  background-color: #9256dc;
-  color: white;
+  background-color: hsl(267, 66%, 60%);
+  color: hsl(0, 0%, 100%);
   border-radius: 25px;
   font-size: 0.875rem;
 }
@@ -248,8 +247,8 @@ p, a {
   left: 0;
   margin-left: -10px;
   padding: 0.3em 0.6em;
-  background-color: #9256dc;
-  color: white;
+  background-color: hsl(267, 66%, 60%);
+  color: hsl(0, 0%, 100%);
   border-radius: 25px;
   font-size: 0.875rem;
 }
@@ -259,13 +258,13 @@ p, a {
   left: 0;
   margin-left: -10px;
   padding: 0.3em 0.6em;
-  background-color: #9256dc;
-  color: white;
+  background-color: hsl(267, 66%, 60%);
+  color: hsl(0, 0%, 100%);
   border-radius: 25px;
   font-size: 0.875rem;
 }
 .operation .operation__card__icon {
-  color: #3d3d3d;
+  color: hsl(0, 0%, 24%);
   font-size: 1.25rem;
 }
 .operation .operation__card__text {
@@ -275,7 +274,7 @@ p, a {
 
 .restaurant {
   padding: 3em 1.5em 4em 1.5em;
-  background-color: whitesmoke;
+  background-color: hsl(0, 0%, 96%);
 }
 .restaurant a {
   display: block;
@@ -309,8 +308,8 @@ p, a {
   top: 10px;
   right: 10px;
   font-size: 0.875rem;
-  background-color: #9ce3d1;
-  color: #006366;
+  background-color: hsl(165, 56%, 75%);
+  color: hsl(182, 100%, 20%);
   padding: 0.4em 0.7em;
   border-radius: 3px;
 }
@@ -342,16 +341,15 @@ p, a {
   .operation__heading {
     text-align: center;
   }
-
   .restaurant__heading {
     text-align: center;
   }
-
   .restaurant__card-container {
     display: flex;
     flex-flow: row wrap;
+    max-width: 1440px;
+    margin: 0 auto;
   }
-
   .restaurant__card {
     width: 47.5%;
     height: 260px;
@@ -363,17 +361,22 @@ p, a {
     max-width: 1170px;
     margin: 0 auto;
   }
-
   .operation__card {
     height: 75px;
   }
-
   .restaurant__card {
     width: 23%;
   }
 }
 body {
-  background-color: whitesmoke;
+  background-color: hsl(0, 0%, 96%);
+}
+
+.restaurant-main-container {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 .hero__header--grid {
@@ -396,11 +399,16 @@ body {
   object-fit: cover;
 }
 
+.menu-container {
+  max-width: 1700px;
+  margin: 0 auto;
+}
+
 .menu {
   padding: 2em 1em 0 1em;
   border-top-right-radius: 30px;
   border-top-left-radius: 30px;
-  background-color: whitesmoke;
+  background-color: hsl(0, 0%, 96%);
   position: relative;
   top: -40px;
   /* CARD APPEARANCE ANIMATION */
@@ -409,7 +417,7 @@ body {
   /* CARD HOVER ANIMATION END*/
 }
 .menu .border {
-  border-bottom: 3px solid #9ce3d1;
+  border-bottom: 3px solid hsl(165, 56%, 75%);
   padding-bottom: 0.3em;
 }
 .menu__heading-container {
@@ -482,7 +490,7 @@ body {
 .menu .text-container {
   padding: 0.8em;
   width: 100%;
-  background-color: white;
+  background-color: hsl(0, 0%, 100%);
   display: grid;
   grid-template-columns: 4fr 1fr;
   grid-template-rows: auto auto;
@@ -514,7 +522,7 @@ body {
 }
 .menu .anim-container {
   width: 0;
-  background-color: #9ce3d1;
+  background-color: hsl(165, 56%, 75%);
   overflow: hidden;
   display: flex;
   justify-content: center;
@@ -522,7 +530,7 @@ body {
   transition: width 0.6s;
 }
 .menu .anim-container .anim__icon {
-  color: white;
+  color: hsl(0, 0%, 100%);
   border-top-right-radius: 0;
   border-bottom-right-radius: 0;
   font-size: 1.5rem;
@@ -538,11 +546,9 @@ body {
     justify-content: center;
     column-gap: 1em;
   }
-
   .menu__section-title {
     text-align: center;
   }
-
   .menu__card {
     max-width: 500px;
   }
@@ -553,7 +559,11 @@ body {
     justify-content: space-evenly;
     column-gap: 1em;
   }
-
+  .menu__starter,
+  .menu__main,
+  .menu__dessert {
+    width: 30%;
+  }
   .menu__card {
     height: 70px;
     max-width: 450px;
@@ -563,9 +573,6 @@ body {
   }
   .menu__card__price {
     align-self: start;
-  }
-  .menu__card-container {
-    width: 30vw;
   }
 }
 

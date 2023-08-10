@@ -17,7 +17,6 @@
   animation: loader 3s ease-out 1 forwards;
   -moz-animation: loader 3s ease-out 1 forwards;
 
-
   @keyframes loader {
     75% {
       opacity: 1;
@@ -31,25 +30,34 @@
       z-index: -1;
     }
   }
-  
 
   .spinner {
-      z-index: 20;
-      border: 12px solid #f3f3f3;
-      border-top: 12px solid $color-primary; 
-      border-right: 12px solid $color-secondary;
-      border-bottom: 12px solid $color-tertiary; 
-      border-radius: 50%;
-      width: 80px;
-      height: 80px;
-      animation: spin 2s linear infinite;
-    
-    
+    z-index: 20;
+    border: 12px solid #f3f3f3;
+    border-top: 12px solid $color-primary;
+    border-right: 12px solid $color-secondary;
+    border-bottom: 12px solid $color-tertiary;
+    border-radius: 50%;
+    width: 80px;
+    height: 80px;
+    animation: spin 2s linear infinite;
+
     @keyframes spin {
-      0% { transform: rotate(0deg); }
-      100% { transform: rotate(360deg); }
+      0% {
+        transform: rotate(0deg);
+      }
+      100% {
+        transform: rotate(360deg);
+      }
     }
   }
+}
+
+.main-container {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 .hero {
@@ -100,146 +108,145 @@
     padding: 1.7em 2em;
     position: relative;
     max-width: 300px;
+    cursor: pointer;
 
-    &--active {
-        background-color: $color-cardBackground;
+    &:hover {
+      background-color: $color-cardBackground;
 
-        .operation__card__icon {
-            color: $color-primary;
-        }
+      .operation__card__icon {
+        color: $color-primary;
+      }
     }
 
     &__one:before {
-            content: "1";
-            position: absolute;
-            left: 0;
-            margin-left: -10px;
-            padding: 0.3em 0.6em;
-            background-color: $color-primary;
-            color: $color-white;
-            border-radius: 25px;
-            font-size: $Small-fontSize;
-        }
+      content: "1";
+      position: absolute;
+      left: 0;
+      margin-left: -10px;
+      padding: 0.3em 0.6em;
+      background-color: $color-primary;
+      color: $color-white;
+      border-radius: 25px;
+      font-size: $Small-fontSize;
+    }
 
     &__two:before {
-        content: "2";
-        position: absolute;
-        left: 0;
-        margin-left: -10px;
-        padding: 0.3em 0.6em;
-        background-color: $color-primary;
-        color: $color-white;
-        border-radius: 25px;
-        font-size: $Small-fontSize;
+      content: "2";
+      position: absolute;
+      left: 0;
+      margin-left: -10px;
+      padding: 0.3em 0.6em;
+      background-color: $color-primary;
+      color: $color-white;
+      border-radius: 25px;
+      font-size: $Small-fontSize;
     }
 
     &__three:before {
-        content: "3";
-        position: absolute;
-        left: 0;
-        margin-left: -10px;
-        padding: 0.3em 0.6em;
-        background-color: $color-primary;
-        color: $color-white;
-        border-radius: 25px;
-        font-size: $Small-fontSize;
+      content: "3";
+      position: absolute;
+      left: 0;
+      margin-left: -10px;
+      padding: 0.3em 0.6em;
+      background-color: $color-primary;
+      color: $color-white;
+      border-radius: 25px;
+      font-size: $Small-fontSize;
     }
 
     &__icon {
-        color: $color-footer;
-        font-size: $Big-fontSize;
+      color: $color-footer;
+      font-size: $Big-fontSize;
     }
 
     &__text {
-        margin-left: 1.5em;
-        font-weight: 500;
+      margin-left: 1.5em;
+      font-weight: 500;
     }
   }
 }
 
 .restaurant {
-    padding: 3em 1.5em 4em 1.5em;
-    background-color: $color-sectionBackground;
+  padding: 3em 1.5em 4em 1.5em;
+  background-color: $color-sectionBackground;
 
-    a {
-      display: block;
-      text-decoration: none;
-      color: inherit;
+  a {
+    display: block;
+    text-decoration: none;
+    color: inherit;
+  }
+
+  .restaurant__heading {
+    margin-bottom: 1em;
+  }
+
+  .restaurant__card__img {
+    width: 100%;
+    height: 190px;
+    object-fit: cover;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+
+    &--2 {
+      object-position: 50% 61%;
     }
 
-    .restaurant__heading {
-        margin-bottom: 1em;
+    &--3 {
+      object-position: 70% 90%;
     }
 
-    .restaurant__card__img {
-        width: 100%;
-        height: 190px;
-        object-fit: cover;
-        border-top-left-radius: 15px;
-        border-top-right-radius: 15px;
+    &--4 {
+      object-position: 50% 90%;
+    }
+  }
 
-        &--2 {
-            object-position: 50% 61%;
-        }
+  .restaurant__card__img-container {
+    position: relative;
 
-        &--3 {
-            object-position: 70% 90%;
-        }
+    .restaurant__card__new-tag {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      font-size: $Small-fontSize;
+      background-color: $color-tertiary;
+      color: $color-newTag;
+      padding: 0.4em 0.7em;
+      border-radius: 3px;
+    }
+  }
 
-        &--4 {
-            object-position: 50% 90%;
-        }
+  .restaurant__card__text-container {
+    padding: 0.8em;
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+    grid-template-rows: auto auto;
+    gap: 0.3em;
+    grid-template-areas:
+      "heading heart"
+      "subheading heart";
+
+    .restaurant__card__heading {
+      grid-area: heading;
+      font-size: $Medium-fontSize;
     }
 
-    .restaurant__card__img-container {
-      position: relative;
-
-      .restaurant__card__new-tag {
-        position: absolute;
-        top: 10px;
-        right: 10px;
-        font-size: $Small-fontSize;
-        background-color: $color-tertiary;
-        color: $color-newTag;
-        padding: .4em .7em;
-        border-radius: 3px;
-      }
+    .restaurant__card__subheading {
+      grid-area: subheading;
+      font-size: $Regular-fontSize;
     }
 
-    .restaurant__card__text-container {
-        padding: .8em;
-        display: grid;
-        grid-template-columns: 3fr 1fr;
-        grid-template-rows: auto auto;
-        gap: .3em;
-        grid-template-areas: 
-            "heading heart"
-            "subheading heart";
-        
-        .restaurant__card__heading {
-            grid-area: heading;
-            font-size: $Medium-fontSize;
-        }
-
-        .restaurant__card__subheading {
-            grid-area: subheading;
-            font-size: $Regular-fontSize;
-        }
-
-        .restaurant__card__icon {
-            grid-area: heart;
-            align-self: start;
-            justify-self: center;
-            font-size: 1.5rem;
-        }
+    .restaurant__card__icon {
+      grid-area: heart;
+      align-self: start;
+      justify-self: center;
+      font-size: 1.5rem;
     }
+  }
 }
-
 
 /* RESPONSIVE */
 
-@media (min-width: 668px){
-
+@media (min-width: 668px) {
   .operation__heading {
     text-align: center;
   }
@@ -251,6 +258,8 @@
   .restaurant__card-container {
     display: flex;
     flex-flow: row wrap;
+    max-width: 1440px;
+    margin: 0 auto;
   }
 
   .restaurant__card {
@@ -259,7 +268,7 @@
   }
 }
 
-@media (min-width: 1046px){
+@media (min-width: 1046px) {
   .operation__card-container {
     display: flex;
     max-width: 1170px;

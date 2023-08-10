@@ -1,59 +1,48 @@
-@use '../abstracts' as *;
-@use '../base' as *;
-
+@use "../abstracts" as *;
+@use "../base" as *;
 
 .footer {
-    background-color: $color-footer;
-    padding: 1.5em 1.5em 2em 1.5em;
+  background-color: $color-footer;
+  padding: 1.5em 1.5em 2em 1.5em;
 
-    a {
-        text-decoration: none;
-        display: block;
-        color: $color-white;
+  a {
+    text-decoration: none;
+    display: block;
+    color: $color-white;
+  }
+
+  .footer__logo {
+    color: $color-white;
+    font-family: $font-headings;
+    font-size: $Regular-fontSize;
+    font-weight: 400;
+    margin: 0 0 1em 0;
+  }
+
+  .footer__text {
+    font-size: $Small-fontSize;
+    margin-bottom: 0.5em;
+
+    &--bold {
+      font-weight: 700;
+      font-size: $Small-fontSize;
     }
 
-    .footer__logo {
-        color: $color-white;
-        font-family: $font-headings;
-        font-size: $Regular-fontSize;
-        font-weight: 400;
-        margin: 0 0 1em 0;
+    &__icon {
+      font-size: 12px;
+      margin-right: 0.5em;
     }
-
-    .footer__text {
-        font-size: $Small-fontSize;
-        margin-bottom: .5em;
-
-        &--bold {
-            font-weight: 700;
-            font-size: $Small-fontSize;
-        }
-
-        &__icon {
-            font-size: 12px;
-            margin-right: .5em;
-        }
-    }
+  }
 }
 
 /* RESPONSIVE */
 
-@media (min-width: 668px){
-    .footer__logo {
-        text-align: center;
-    }
-
-    .footer__text-container {
-        display: flex;
-        justify-content: space-around;
-    }
+@media (min-width: 668px) {
+  .footer__logo {
+    text-align: center;
   }
 
-  @media (min-width: 1046px){
-
-    .footer__text-container-half {
-        display: flex;
-        width: 50%;
-        justify-content: space-evenly;
-    }
+  .footer__text {
+    text-align: center;
   }
+}

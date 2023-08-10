@@ -3,234 +3,246 @@
 @use "../components" as *;
 
 body {
-    background-color: $color-sectionBackground;
+  background-color: $color-sectionBackground;
+}
+
+.restaurant-main-container {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 .hero__header--grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    align-items: center;
-    padding-left: 1em;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  align-items: center;
+  padding-left: 1em;
 
-    .hero__header__return {
-        color: inherit;
-        justify-self: left;
-    }
+  .hero__header__return {
+    color: inherit;
+    justify-self: left;
+  }
 
-    .hero__header__logo {
-        justify-self: center;
-    }
+  .hero__header__logo {
+    justify-self: center;
+  }
 }
 
 .hero__img {
-    width: 100%;
-    height: 350px;
-    object-fit: cover;
+  width: 100%;
+  height: 350px;
+  object-fit: cover;
+}
+
+.menu-container {
+  max-width: 1700px;
+  margin: 0 auto;
 }
 
 .menu {
-    padding: 2em 1em 0 1em;
-    border-top-right-radius: 30px;
-    border-top-left-radius: 30px;
-    background-color: $color-sectionBackground;
-    position: relative;
-    top: -40px;
+  padding: 2em 1em 0 1em;
+  border-top-right-radius: 30px;
+  border-top-left-radius: 30px;
+  background-color: $color-sectionBackground;
+  position: relative;
+  top: -40px;
 
-    .border {
-        border-bottom: 3px solid $color-tertiary;
-        padding-bottom: .3em;
+  .border {
+    border-bottom: 3px solid $color-tertiary;
+    padding-bottom: 0.3em;
+  }
+
+  &__heading-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: start;
+
+    .menu__heading__text {
+      font-family: $font-headings;
+      font-size: $Logo-fontSize;
+      margin: 0;
     }
 
-    &__heading-container {
-        display: flex;
-        justify-content: space-between;
-        align-items: start;
+    .menu__heading__icon {
+      font-size: $Logo-fontSize;
+    }
+  }
 
-        .menu__heading__text {
-            font-family: $font-headings;
-            font-size: $Logo-fontSize;
-            margin: 0;
-        }
+  &__section-title {
+    text-transform: uppercase;
+    font-weight: 300;
+    font-size: $Regular-fontSize;
+    margin-top: 2.5em;
+    margin-bottom: 1.5em;
+  }
 
-        .menu__heading__icon {
-            font-size: $Logo-fontSize;
-        }
+  /* CARD APPEARANCE ANIMATION */
+
+  &__card-container--starter {
+    opacity: 0;
+    animation: starter 1s ease-out 1s 1 forwards;
+  }
+
+  @keyframes starter {
+    100% {
+      opacity: 1;
+    }
+  }
+
+  &__card-container--course {
+    opacity: 0;
+    animation: course 1s ease-out 2s 1 forwards;
+  }
+
+  @keyframes course {
+    100% {
+      opacity: 1;
+    }
+  }
+
+  &__card-container--dessert {
+    opacity: 0;
+    animation: dessert 1s ease-out 3s 1 forwards;
+  }
+
+  @keyframes dessert {
+    100% {
+      opacity: 1;
+    }
+  }
+  /* CARD APPEARANCE ANIMATION END*/
+
+  /* CARD HOVER ANIMATION */
+
+  &__card {
+    display: flex;
+    height: 70px;
+    max-width: 500px;
+    overflow: hidden;
+
+    &:hover .anim-container {
+      width: 80px;
     }
 
-    &__section-title {
-        text-transform: uppercase;
-        font-weight: 300;
-        font-size: $Regular-fontSize;
-        margin-top: 2.5em;
-        margin-bottom: 1.5em;
+    &:hover .anim__icon {
+      animation: icon-rotation 0.6s forwards;
+    }
+  }
+
+  @keyframes icon-rotation {
+    0% {
+      transform: rotate(90deg);
     }
 
-    /* CARD APPEARANCE ANIMATION */
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+  /* CARD HOVER ANIMATION END*/
 
-    &__card-container--starter {
-        opacity: 0;
-        animation: starter 1s ease-out 1s 1 forwards;
+  .text-container {
+    padding: 0.8em;
+    width: 100%;
+    background-color: $color-white;
+    display: grid;
+    grid-template-columns: 4fr 1fr;
+    grid-template-rows: auto auto;
+    gap: 0.3em;
+    grid-template-areas:
+      "heading price anim"
+      "subheading price anim";
+
+    .menu__card__title {
+      grid-area: heading;
+      font-size: $Medium-fontSize;
+      font-weight: 700;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
     }
 
-    @keyframes starter {
-        100% {
-            opacity: 1;
-        }
+    .menu__card__subtitle {
+      grid-area: subheading;
+      font-size: $Regular-fontSize;
+      font-weight: 300;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
     }
 
-    &__card-container--course {
-        opacity: 0;
-        animation: course 1s ease-out 2s 1 forwards;
+    .menu__card__price {
+      grid-area: price;
+      align-self: end;
+      justify-self: right;
+      font-size: $Regular-fontSize;
+      font-weight: bold;
     }
+  }
 
-    @keyframes course {
-        100% {
-            opacity: 1;
-        }
+  .anim-container {
+    width: 0;
+    background-color: $color-tertiary;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: width 0.6s;
+
+    .anim__icon {
+      color: $color-white;
+      border-top-right-radius: 0;
+      border-bottom-right-radius: 0;
+      font-size: 1.5rem;
     }
+  }
 
-    &__card-container--dessert {
-        opacity: 0;
-        animation: dessert 1s ease-out 3s 1 forwards;
-    }
-
-    @keyframes dessert {
-        100% {
-            opacity: 1;
-        }
-    }
-    /* CARD APPEARANCE ANIMATION END*/
-
-
-    /* CARD HOVER ANIMATION */
-    
-    &__card {
-        display: flex;
-        height: 70px;
-        max-width: 500px;
-        overflow: hidden;
-
-        &:hover .anim-container {
-            width: 80px;
-        }
-
-        &:hover .anim__icon {
-            animation: icon-rotation .6s forwards;
-        }
-    }
-
-    @keyframes icon-rotation {
-        0% {
-            transform: rotate(90deg);
-        }
-
-        100% {
-            transform: rotate(360deg);
-        }
-    }
-    /* CARD HOVER ANIMATION END*/
-
-    .text-container {
-        padding: .8em;
-        width: 100%;
-        background-color: $color-white;
-        display: grid;
-        grid-template-columns: 4fr 1fr;
-        grid-template-rows: auto auto;
-        gap: .3em;
-        grid-template-areas: 
-            "heading price anim"
-            "subheading price anim";
-        
-        .menu__card__title {
-            grid-area: heading;
-            font-size: $Medium-fontSize;
-            font-weight: 700;
-            white-space: nowrap;
-            overflow: hidden;
-            text-overflow: ellipsis;
-        }
-
-        .menu__card__subtitle {
-            grid-area: subheading;
-            font-size: $Regular-fontSize;
-            font-weight: 300;
-            white-space: nowrap;
-            overflow: hidden;
-            text-overflow: ellipsis;
-        }
-
-        .menu__card__price {
-            grid-area: price;
-            align-self: end;
-            justify-self: right;
-            font-size: $Regular-fontSize;
-            font-weight: bold;
-        }
-    }
-
-    .anim-container {
-        width: 0;
-        background-color: $color-tertiary;
-        overflow: hidden;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        transition: width .6s;
-
-        .anim__icon {
-            color: $color-white;
-            border-top-right-radius: 0;
-            border-bottom-right-radius: 0;
-            font-size: 1.5rem;
-        }
-    }
-
-    .cta-container {
-        display: flex;
-        justify-content: center;
-    }
+  .cta-container {
+    display: flex;
+    justify-content: center;
+  }
 }
-
 
 /* RESPONSIVE */
 
-@media (min-width: 668px){
-    .menu__heading-container {
-        justify-content: center;
-        column-gap: 1em;
+@media (min-width: 668px) {
+  .menu__heading-container {
+    justify-content: center;
+    column-gap: 1em;
+  }
+
+  .menu__section-title {
+    text-align: center;
+  }
+
+  .menu__card {
+    max-width: 500px;
+  }
+}
+
+@media (min-width: 1046px) {
+  .menu-container {
+    display: flex;
+    justify-content: space-evenly;
+    column-gap: 1em;
+  }
+
+  .menu__starter,
+  .menu__main,
+  .menu__dessert {
+    width: 30%;
+  }
+
+  .menu__card {
+    height: 70px;
+    max-width: 450px;
+
+    &__title {
+      align-self: center;
     }
 
-    .menu__section-title {
-        text-align: center;
-    }
-    
-    .menu__card {
-        max-width: 500px;
+    &__price {
+      align-self: start;
     }
   }
-  
-  @media (min-width: 1046px){
-    .menu-container {
-        display: flex;
-        justify-content: space-evenly;
-        column-gap: 1em;
-    }
-
-    .menu__card {
-        height: 70px;
-        max-width: 450px;
-
-        &__title {
-            align-self: center;
-        }
-
-        &__price {
-            align-self: start;
-        }
-
-        &-container {
-            width: 30vw;
-        }
-    }
-  }
+}
